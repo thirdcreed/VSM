@@ -1,0 +1,28 @@
+{
+  "users": [
+    {
+      "id": "3166e84a-a9cf-4e1c-aa47-0062db3c9ed5",
+      "handle": "testUser",
+      "email": "userEmail@email.ema"
+    }
+  ],
+  "orgs": [
+    {
+      "id": "0d632089-ee3f-4267-8e66-256e9fa76caa",
+      "name": "test",
+      "members": [],
+      "operations": [
+        "926bac86-8c5b-487c-81ec-a6ae05a55e3b",
+        "926bac86-8c5b-487c-81ec-a6ae05a55e3b",
+        "926bac86-8c5b-487c-81ec-a6ae05a55e3b",
+        "926bac86-8c5b-487c-81ec-a6ae05a55e3b"
+      ]
+    },
+    {
+      "id": "926bac86-8c5b-487c-81ec-a6ae05a55e3b",
+      "name": "test",
+      "members": [],
+      "operations": []
+    }
+  ]
+}

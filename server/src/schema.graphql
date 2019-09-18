@@ -1,0 +1,27 @@
+type User {
+  id:ID! 
+  handle: String! 
+  email: String! 
+  organizations: [Org] 
+}
+
+type Org {
+  id:ID! 
+  members:[User] 
+  name: String! 
+  operations:[Org]
+}
+
+type Query {
+  user(id: ID!): User
+  users: [User!]
+  org(id: ID!): Org
+  orgs: [Org]
+}
+
+type Mutation {
+  createUser(handle:String!,email:String):User!
+  createOrg(name:String!):Org!
+  addMember(orgName:String!,userId:ID!):User!
+  addOperation(parentOrgId:ID!,childOrgId:ID!):Org!
+}

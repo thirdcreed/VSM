@@ -1,0 +1,68 @@
+mutation {
+  
+user1: createUser(
+    data: {
+      handle: "Pueblo" 
+      email: "pueblo@pablo.net"
+      organizations: {
+        create: [{ name: "Jara Inc." }]
+      }
+    }
+  ) {
+      id
+      handle
+      email
+      organizations {
+        name
+        members {
+          handle
+        }
+      }
+    }
+
+org1: updateOrg(
+    where: {
+      name: "Jara Inc." 
+    }
+    data: {
+      members: {
+         connect: 
+         {
+           handle: "Pueblo"
+         }
+      }
+    }
+  ) {
+      name
+      members {
+        handle
+        organizations {
+          name
+        }
+      }
+    }
+
+  connectEm: updateUser(
+    where: { 
+      handle: "Pueblo" 
+      }
+    data: {
+      email:"newEmailThisUpdateWorks"
+      organizations: {
+        connect: { 
+          name: "Jara Inc." 
+          }
+      }
+    }
+  ) {
+    handle
+    id
+    organizations {
+     name
+     members {
+       handle
+     }
+    }
+  }
+  
+}

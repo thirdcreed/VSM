@@ -1,0 +1,13 @@
+type User {
+  id:ID! @id
+  handle: String! @unique
+  email: String! @unique
+  organizations: [Org!]! @relation(name:"OrgsToUsers")
+}
+
+type Org {
+  id:ID! @id
+  members:[User!]! @relation(name:"OrgsToUsers")
+  name: String! @unique
+}
+
